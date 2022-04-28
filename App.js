@@ -3,16 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomeScreen from './src/screens/home.screen';
 
 const Tab = createBottomTabNavigator();
-
-const HomeScreen = () => {
-  return(
-    <View>
-      <Text></Text>
-    </View>
-  )
-}
 
 const Saved = () => {
   return(
