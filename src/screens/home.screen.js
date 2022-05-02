@@ -31,7 +31,7 @@ export const HomeScreen = () => {
                     {resipes.map(resipe => {
                         return (
                             <>
-                                <CardComp key={resipe.title} title={resipe.title} imageUrl={urlFor(resipe.image).url()} />
+                                <CardComp key={resipe._id} title={resipe.title} imageUrl={urlFor(resipe.image).url()} />
                                 <Spacer />
                             </>
                         )
