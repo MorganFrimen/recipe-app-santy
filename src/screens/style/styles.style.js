@@ -7,7 +7,7 @@ export const Conatainer = styled.View`
 
 export const CartText = styled.Text`
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 900;
 `;
 
 export const Spacer = styled.View`
