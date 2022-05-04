@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, TouchableOpacity } from 'react-native';
+import { SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
 import { CardComp } from '../componetns/card.component';
 import { Search } from '../componetns/search.component';
 import { TopDishesCard } from '../componetns/top.Dishes.component';
@@ -24,12 +24,41 @@ export const HomeScreen = ({ navigation }) => {
         <Scroll>
           <CartText>Dines</CartText>
           <Spacer />
-          <TopDishesCard />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {resipes.map((resipe) => {
+              return (
+                <>
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate('detail', {
+                        uri: urlFor(resipe.image).url(),
+                        ingridients: resipe.ingridients,
+                        steps: resipe.steps,
+                      })
+                    }>
+                    <TopDishesCard
+                      key={resipe.id}
+                      title={resipe.title}
+                      image={urlFor(resipe.image).url()}
+                    />
+                  </TouchableOpacity>
+                  <Spacer />
+                </>
+              );
+            })}
+          </ScrollView>
           <Spacer />
           {resipes.map((resipe) => {
             return (
               <>
-                <TouchableOpacity onPress={() => navigation.navigate('detail')}>
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate('detail', {
+                      uri: urlFor(resipe.image).url(),
+                      ingridients: resipe.ingridients,
+                      steps: resipe.steps,
+                    })
+                  }>
                   <CardComp
                     key={resipe.id}
                     title={resipe.title}

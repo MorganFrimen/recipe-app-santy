@@ -1,42 +1,40 @@
-import React from 'react'
-import { Card } from 'react-native-paper'
-import { View, Text } from 'react-native'
-import styled from 'styled-components/native'
+import React from 'react';
+import { Card } from 'react-native-paper';
+import { View, Text } from 'react-native';
+import styled from 'styled-components/native';
 
 const Infocard = styled(Card)`
-    background-color: white;
-    border-radius: 12px;
-    display: flex;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  min-width: 420px;
 `;
 
 const InfoCardCover = styled(Card.Cover)`
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 `;
 
 const Info = styled.View`
-    padding: 16px;
+  padding: 16px;
 `;
 
 const Title = styled.Text`
-    font-size: 16px;
-    text-align: center;
+  font-size: 16px;
+  text-align: center;
 `;
 
 export const CardComp = ({ imageUrl, title }) => {
-    return(
-        <Infocard>
-            <View>
-                <InfoCardCover 
-                    key='food'
-                    source={{ uri: imageUrl }}
-                />
-            </View>
-            <Info>
-                <Title> {title} </Title>
-            </Info>
-        </Infocard>
-    )
-}   
+  return (
+    <Infocard>
+      <View>
+        <InfoCardCover key="food" source={{ uri: imageUrl }} />
+      </View>
+      <Info>
+        <Title>{title}</Title>
+      </Info>
+    </Infocard>
+  );
+};
